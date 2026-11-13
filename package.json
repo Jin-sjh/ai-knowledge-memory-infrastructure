@@ -9,13 +9,17 @@
     "node": ">=22"
   },
   "scripts": {
-    "check": "node scripts/check.mjs"
+    "check": "node scripts/check.mjs",
+    "site:build": "node scripts/prepare-site.mjs && vitepress build && node scripts/check-site.mjs",
+    "site:preview": "vitepress preview --host 127.0.0.1"
   },
   "devDependencies": {
     "ajv": "8.20.0",
     "ajv-formats": "3.0.1",
     "jsdom": "26.1.0",
     "markdown-it": "14.3.3",
-    "mermaid": "11.17.2"
+    "mermaid": "11.17.2",
+    "vitepress": "1.6.4",
+    "vue": "3.5.45"
   }
 }

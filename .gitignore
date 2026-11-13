@@ -2,3 +2,6 @@ node_modules/
 .DS_Store
 *.log
 reports/local/
+.site/
+.vitepress/cache/
+.vitepress/dist/

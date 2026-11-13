@@ -4,6 +4,8 @@
 
 从理论、信息形成和生命周期，到检索、上下文、系统架构与效果验证的中文技术专著。
 
+**[在线阅读](https://jin-sjh.github.io/ai-knowledge-memory-infrastructure/)** · 中文搜索 · 八章导航 · 深浅色切换
+
 ## 阅读路线
 
 适合已有 LLM 基础、希望理解外部知识与 Agent 记忆系统的开发者。首次阅读按 01—08 顺序；关注工程可先读 01、02、06、07，再回到机制与评测。
@@ -43,6 +45,10 @@ node scripts/score.mjs examples/evaluation/gold.json examples/evaluation/sample-
 ```
 
 检查覆盖内链与锚点、章节映射、Mermaid 语法、JSON 和 Schema，不能替代事实审稿、图形视觉审稿和真实系统实验。
+
+## 网页构建与发布
+
+运行 npm run site:build 生成静态文档站，npm run site:preview 本地预览。网站由现有 Markdown 构建，自动转换章节链接并渲染 Mermaid；无需维护第二份正文。main 分支更新后，Pages 工作流先检查、再构建并发布到上述网址。
 
 ## 参与维护
 
