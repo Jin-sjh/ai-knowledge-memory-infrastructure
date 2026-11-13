@@ -13,9 +13,12 @@
     "site:build": "node scripts/prepare-site.mjs && vitepress build && node scripts/check-site.mjs",
     "site:preview": "vitepress preview --host 127.0.0.1",
     "lab:formation": "node labs/formation/cli.mjs",
-    "test:formation": "node --test labs/formation/test/*.test.mjs"
+    "test:formation": "node --test labs/formation/test/*.test.mjs",
+    "example:langgraph": "node examples/projects/langgraph-store.mjs",
+    "test:projects": "node --test examples/projects/*.test.mjs"
   },
   "devDependencies": {
+    "@langchain/langgraph": "1.7.4",
     "ajv": "8.20.0",
     "ajv-formats": "3.0.1",
     "jsdom": "26.1.0",

@@ -1,0 +1,204 @@
+{
+  "verified_at": "2026-11-13",
+  "normalization": "UTF-8 BOM removed; CRLF/CR converted to LF; trailing whitespace at EOF removed and one LF appended. Upstream source is not vendored.",
+  "runtime": {
+    "package": "@langchain/langgraph@1.7.4",
+    "release_commit": "572657e381fdf5c421904169b0f8c7c54f7f68d4",
+    "checkpoint": "@langchain/langgraph-checkpoint@1.2.2"
+  },
+  "projects": [
+    {
+      "project": "Mem0",
+      "repo": "mem0ai/mem0",
+      "commit": "f1791daa86d469249c9b002f62644d58a1eb96a0",
+      "verification": "static-source-reading",
+      "files": [
+        {
+          "path": "mem0/memory/main.py",
+          "url": "https://github.com/mem0ai/mem0/blob/f1791daa86d469249c9b002f62644d58a1eb96a0/mem0/memory/main.py",
+          "verified_ranges": [
+            [
+              314,
+              404
+            ],
+            [
+              881,
+              991
+            ],
+            [
+              1007,
+              1098
+            ],
+            [
+              1206,
+              1220
+            ]
+          ],
+          "line_count": 3917,
+          "normalized_sha256": "e37b2775aafbc654113cb643dae2a8a9cf299d2e7eee29904f1ed212f89aa570"
+        },
+        {
+          "path": "mem0/configs/prompts.py",
+          "url": "https://github.com/mem0ai/mem0/blob/f1791daa86d469249c9b002f62644d58a1eb96a0/mem0/configs/prompts.py",
+          "verified_ranges": [
+            [
+              176,
+              185
+            ],
+            [
+              1016,
+              1062
+            ]
+          ],
+          "line_count": 1063,
+          "normalized_sha256": "10bc8a34b3b5f0ce24560a2a3190c9112b979a891b981f48393bbd168d915a5c"
+        }
+      ]
+    },
+    {
+      "project": "Letta Code",
+      "repo": "letta-ai/letta-code",
+      "commit": "bd31b0a72dfad1ba14fc3a82f47da6a2b606330d",
+      "verification": "static-source-and-prompt-reading",
+      "files": [
+        {
+          "path": "src/agent/memory-format.ts",
+          "url": "https://github.com/letta-ai/letta-code/blob/bd31b0a72dfad1ba14fc3a82f47da6a2b606330d/src/agent/memory-format.ts",
+          "verified_ranges": [
+            [
+              1,
+              41
+            ]
+          ],
+          "line_count": 42,
+          "normalized_sha256": "d06c0d5eb4a206ac35a2f673910782ef3c846155405aa443d315dbaf3ef77a47"
+        },
+        {
+          "path": "src/backend/local/system-prompt-compilation.ts",
+          "url": "https://github.com/letta-ai/letta-code/blob/bd31b0a72dfad1ba14fc3a82f47da6a2b606330d/src/backend/local/system-prompt-compilation.ts",
+          "verified_ranges": [
+            [
+              65,
+              142
+            ],
+            [
+              154,
+              198
+            ],
+            [
+              432,
+              460
+            ]
+          ],
+          "line_count": 462,
+          "normalized_sha256": "d3557c2ab0fc3eedde14ce417247fcce029e75064f4fae5539b144b521c00178"
+        },
+        {
+          "path": "src/tools/impl/memory.ts",
+          "url": "https://github.com/letta-ai/letta-code/blob/bd31b0a72dfad1ba14fc3a82f47da6a2b606330d/src/tools/impl/memory.ts",
+          "verified_ranges": [
+            [
+              244,
+              325
+            ],
+            [
+              348,
+              426
+            ]
+          ],
+          "line_count": 428,
+          "normalized_sha256": "d010878756be3fa89d4bfc64c4faf2f3c2340a3aff089796e0d55623232cb97a"
+        },
+        {
+          "path": "src/agent/prompts/letta_root_memfs.md",
+          "url": "https://github.com/letta-ai/letta-code/blob/bd31b0a72dfad1ba14fc3a82f47da6a2b606330d/src/agent/prompts/letta_root_memfs.md",
+          "verified_ranges": [
+            [
+              26,
+              58
+            ]
+          ],
+          "line_count": 191,
+          "normalized_sha256": "14caf9f30f6b743a1bc52e38a2ed51dcb779cb26d050ef700b263c07f89498ee"
+        }
+      ]
+    },
+    {
+      "project": "LangGraph checkpoint Node.js",
+      "repo": "langchain-ai/langgraphjs",
+      "commit": "959f041dfb8f6bbafa6af3ebb4bc20484a9290da",
+      "version": "@langchain/langgraph-checkpoint@1.2.2",
+      "verification": "static-source-and-actual-node-execution",
+      "files": [
+        {
+          "path": "libs/checkpoint/src/store/memory.ts",
+          "url": "https://github.com/langchain-ai/langgraphjs/blob/959f041dfb8f6bbafa6af3ebb4bc20484a9290da/libs/checkpoint/src/store/memory.ts",
+          "verified_ranges": [
+            [
+              188,
+              219
+            ]
+          ],
+          "line_count": 474,
+          "normalized_sha256": "1b8d13350e121dc836e75892b0f4e616a2fc26634cd8a4f6bbf143c180e0ceec"
+        },
+        {
+          "path": "libs/checkpoint/src/memory.ts",
+          "url": "https://github.com/langchain-ai/langgraphjs/blob/959f041dfb8f6bbafa6af3ebb4bc20484a9290da/libs/checkpoint/src/memory.ts",
+          "verified_ranges": [
+            [
+              462,
+              509
+            ]
+          ],
+          "line_count": 686,
+          "normalized_sha256": "e3cee047745aa227ac91762616c29996b7cc5b4af0ebe50cb3648212363b5b5c"
+        }
+      ]
+    },
+    {
+      "project": "LlamaIndex",
+      "repo": "run-llama/llama_index",
+      "commit": "baeabbfe26241a6916e13e2a8c8156a02e0602cd",
+      "verification": "static-source-reading",
+      "files": [
+        {
+          "path": "llama-index-core/llama_index/core/ingestion/pipeline.py",
+          "url": "https://github.com/run-llama/llama_index/blob/baeabbfe26241a6916e13e2a8c8156a02e0602cd/llama-index-core/llama_index/core/ingestion/pipeline.py",
+          "verified_ranges": [
+            [
+              58,
+              113
+            ],
+            [
+              423,
+              449
+            ],
+            [
+              469,
+              507
+            ],
+            [
+              572,
+              662
+            ]
+          ],
+          "line_count": 883,
+          "normalized_sha256": "00a1de638af05f7cf8bfa068f24f8f6b4037fa5849896ebfab0e2edbe165695d"
+        },
+        {
+          "path": "llama-index-core/llama_index/core/node_parser/interface.py",
+          "url": "https://github.com/run-llama/llama_index/blob/baeabbfe26241a6916e13e2a8c8156a02e0602cd/llama-index-core/llama_index/core/node_parser/interface.py",
+          "verified_ranges": [
+            [
+              84,
+              155
+            ]
+          ],
+          "line_count": 300,
+          "normalized_sha256": "394d93acb38407088022a8b8de4b68cf06b90e3c1db016b2464823d7dc79ea46"
+        }
+      ]
+    }
+  ]
+}

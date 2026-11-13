@@ -1,0 +1,43 @@
+{
+  "library": {
+    "langgraph": "1.7.4",
+    "checkpoint": "1.2.2"
+  },
+  "observations": [
+    {
+      "thread": "conversation-a",
+      "user": "u1",
+      "style": "详细解释",
+      "visits": 1
+    },
+    {
+      "thread": "conversation-b",
+      "user": "u1",
+      "style": "先给简短结论",
+      "visits": 1
+    },
+    {
+      "thread": "conversation-a",
+      "user": "u1",
+      "style": "先给简短结论",
+      "visits": 2
+    },
+    {
+      "thread": "conversation-c",
+      "user": "u2",
+      "style": "未设置",
+      "visits": 1
+    }
+  ],
+  "checkpointVisits": {
+    "a": 2,
+    "b": 1
+  },
+  "u1KeysAfterOverwrite": 1,
+  "rawStoreBroadPrefixUsers": [
+    "u1",
+    "u2"
+  ],
+  "freshStoreHasData": false,
+  "scope": "实际调用官方内存 Store 与检查点；不验证模型提取、语义搜索、认证或数据库持久化。"
+}

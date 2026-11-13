@@ -4,7 +4,7 @@
 
 ## 问题导读与阅读顺序
 
-本章以 Atlas 的文档、对话和工具记录为例，介绍信息从采集到写入的完整过程，并说明哪些信息应当保存、拒绝或交由人工审核。阅读各节后，可以运行配套的 [Node.js 实验](../../labs/formation/README.md)，修改输入，观察处理结果如何变化。
+本章介绍信息从采集到写入的处理过程，并结合 LlamaIndex、Mem0、Letta Code 和 LangGraph 的源码说明现有系统怎样实现这些机制。阅读时可先看[项目实现案例](../implementations/README.md)，再用 Atlas 的配套实验观察候选验证、保存决策和失败处理。
 
 实验默认离线；候选及语义判定为教材预设，不是模型实测输出。实际运行记录与预期结果分开保存；可选真实模型入口默认不自动批准新输出。
 
@@ -16,6 +16,17 @@
 - [3.4 记忆提取（Memory Extraction）](04.md)
 - [3.5 信息价值判断（Information Selection）](05.md)
 - [3.6 信息写入机制（Write Pipeline）](06.md)
+
+## 项目实现案例
+
+| 项目 | 具体观察 |
+| --- | --- |
+| [LlamaIndex](../implementations/llamaindex.md) | 文档输入、节点关系、转换缓存及更新策略 |
+| [Mem0](../implementations/mem0.md) | 旧记忆检索、模型提取、去重和追加存储 |
+| [Letta Code](../implementations/letta.md) | 记忆文件分层、Git 快照与系统提示编译 |
+| [LangGraph](../implementations/langgraph.md) | 官方 Store 与检查点的真实 Node.js 运行 |
+
+源码引用固定到具体提交。前三项为源码分析；LangGraph 附无模型依赖的实际运行记录，不把推演输出当实测。
 
 ## 本章模型
 
