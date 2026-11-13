@@ -28,12 +28,12 @@
 ## 首版内容
 
 - 八章正文：48 个独立主题，271 个细分考点。
-- 第三章已深化为[完整案例与 Node.js 实验](labs/formation/README.md)，包含中间数据、反例和可选模型入口；其余章节仍为内容首稿。
+- 第三章配有 [Atlas 案例与 Node.js 实验](labs/formation/README.md)，可查看中间数据、运行失败场景，并选择接入真实模型。
 - [术语表](docs/appendices/glossary.md)、[贯穿案例](docs/appendices/atlas-case.md)、[选型矩阵](docs/appendices/technology-matrix.md)。
 - [数据模型](examples/README.md)、[API 参考契约](docs/appendices/api-contract.md)、[实验规程](docs/appendices/evaluation-protocol.md)。
 - [一手文献](docs/references/README.md)、[原始大纲](sources/outline-v2.md)、[覆盖映射](sources/coverage.md)。
 
-**状态：八章已覆盖；第三章案例深化，其余为 v0.1.0 内容首稿，持续接受同行审阅。** 核验日期：2026-11-13。新增实验是本地教学流水线，没有在线服务、SDK 或实测架构成绩。Atlas 为合成案例，离线回归不证明模型质量或架构收益。
+**实验说明：** 配套代码在本地运行，用于演示信息处理流程，不提供在线服务或 SDK。Atlas 为合成案例，离线测试不用于证明模型质量或架构收益。技术资料核验日期：2026-11-13。
 
 ## 本地检查
 
