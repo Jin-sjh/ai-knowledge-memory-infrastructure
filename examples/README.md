@@ -18,6 +18,6 @@ Checkpoint 中 unknown 表示必须核验远端状态，不允许恢复后直接
 
 [evaluation/gold.json](evaluation/gold.json) 为小型合成金标准，sample-predictions.json 为手写流程演示预测，绝不作为系统实验结果。执行规程见[评测附录](../docs/appendices/evaluation-protocol.md)。
 
-## CI 模板
+## 自动检查
 
-[检查工作流模板](ci/check.yml)复用本地 npm 检查。当前发布凭据缺少 workflow 权限，模板未在远端启用；以后可在具有对应权限时放入 .github/workflows/。
+[检查工作流](../.github/workflows/check.yml)在 push 和 pull_request 时运行 npm ci 与 npm run check，复用本地文档、图表和数据校验。实际运行结果见仓库 Actions 页面。
