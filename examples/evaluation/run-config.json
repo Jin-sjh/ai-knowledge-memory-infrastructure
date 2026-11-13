@@ -1,0 +1,28 @@
+{
+  "status": "protocol_only_not_executed",
+  "dataset": "examples/evaluation/gold.json",
+  "seed": 42,
+  "repeats": 3,
+  "model": null,
+  "model_revision": null,
+  "prompt_hash": null,
+  "corpus_hash": null,
+  "retrieval": {
+    "k": 5,
+    "chunk_tokens": 400,
+    "overlap_tokens": 60
+  },
+  "budget": {
+    "input_tokens": 4000,
+    "reserved_output_tokens": 1000
+  },
+  "baselines": [
+    "no_external",
+    "long_context",
+    "rag",
+    "memory",
+    "wiki",
+    "graph",
+    "hybrid"
+  ]
+}

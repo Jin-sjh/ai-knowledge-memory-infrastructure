@@ -1,0 +1,21 @@
+{
+  "name": "ai-knowledge-memory-infrastructure",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "中文 AI 知识与记忆基础设施技术专著",
+  "license": "SEE LICENSE IN LICENSE-CONTENT.md AND LICENSE-CODE",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "check": "node scripts/check.mjs"
+  },
+  "devDependencies": {
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
+    "jsdom": "26.1.0",
+    "markdown-it": "14.3.3",
+    "mermaid": "11.17.2"
+  }
+}

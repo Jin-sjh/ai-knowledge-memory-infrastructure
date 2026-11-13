@@ -1,0 +1,40 @@
+# 第 03 章：知识与记忆的形成机制
+
+[全书首页](../../README.md) · [上一章](../02-representation/README.md) · [下一章](../04-lifecycle/README.md)
+
+## 问题导读与阅读顺序
+
+采集如何保留出处和权限？ 预处理怎样保住语义？ 怎样提取有证据的知识？ 交互中什么值得成为记忆？ 提取后为何还要筛选？ 怎样可靠执行写入？
+
+- [3.1 信息获取机制（Acquisition）](01.md)
+- [3.2 信息预处理（Preprocessing）](02.md)
+- [3.3 知识提取（Knowledge Extraction）](03.md)
+- [3.4 记忆提取（Memory Extraction）](04.md)
+- [3.5 信息价值判断（Information Selection）](05.md)
+- [3.6 信息写入机制（Write Pipeline）](06.md)
+
+## 本章模型
+
+以下为参考设计，箭头表示处理方向或职责联系，不代表已部署组件。
+
+```mermaid
+flowchart TD
+ Input[输入快照] --> Parse[解析与切分]
+ Parse --> Extract[候选提取]
+ Extract --> Verify[结构与证据检查]
+ Verify --> Policy{权限与保存策略}
+ Policy -->|允许| Commit[事务提交与 outbox]
+ Policy -->|拒绝或不足| Review[拒绝或审核]
+ Commit --> Index[异步索引]
+```
+
+## 章节关系
+
+本章负责首次形成与写入，长期演进由第四章处理。
+
+## 配套产出
+
+- [贯穿案例](../appendices/atlas-case.md)
+- [模型和示例](../../examples/README.md)
+- [API 契约](../appendices/api-contract.md)
+- [实验执行规程](../appendices/evaluation-protocol.md)

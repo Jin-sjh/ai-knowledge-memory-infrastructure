@@ -1,0 +1,50 @@
+[
+  {
+    "id": "current-rule",
+    "split": "test",
+    "query": "2026-11-03 普通发布需几人审批？",
+    "principal": "u1",
+    "as_of": "2026-11-03T00:00:00Z",
+    "relevant": [
+      "rule@2"
+    ],
+    "forbidden": [
+      "rule@1"
+    ]
+  },
+  {
+    "id": "historical-rule",
+    "split": "test",
+    "query": "2026-10-15 普通发布需几人审批？",
+    "principal": "u1",
+    "as_of": "2026-10-15T00:00:00Z",
+    "relevant": [
+      "rule@1"
+    ],
+    "forbidden": [
+      "rule@2"
+    ]
+  },
+  {
+    "id": "isolation",
+    "split": "test",
+    "query": "查询 u1 的答复偏好",
+    "principal": "u2",
+    "as_of": "2026-11-03T00:00:00Z",
+    "relevant": [],
+    "forbidden": [
+      "preference@1"
+    ]
+  },
+  {
+    "id": "after-deletion",
+    "split": "test",
+    "query": "删除后查询我的答复偏好",
+    "principal": "u1",
+    "as_of": "2026-11-06T00:00:00Z",
+    "relevant": [],
+    "forbidden": [
+      "preference@1"
+    ]
+  }
+]

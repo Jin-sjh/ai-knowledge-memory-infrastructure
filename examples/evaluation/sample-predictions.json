@@ -1,0 +1,22 @@
+[
+  {
+    "id": "current-rule",
+    "retrieved": [
+      "rule@2"
+    ]
+  },
+  {
+    "id": "historical-rule",
+    "retrieved": [
+      "rule@1"
+    ]
+  },
+  {
+    "id": "isolation",
+    "retrieved": []
+  },
+  {
+    "id": "after-deletion",
+    "retrieved": []
+  }
+]

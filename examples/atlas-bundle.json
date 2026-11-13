@@ -1,0 +1,195 @@
+{
+  "sources": [
+    {
+      "id": "policy",
+      "version": 1,
+      "scope": {
+        "tenant_id": "tenant-demo",
+        "kind": "project",
+        "id": "atlas"
+      },
+      "content": "普通发布需一名审批者。",
+      "recorded_at": "2026-10-01T00:00:00Z",
+      "acl_version": 1
+    },
+    {
+      "id": "policy",
+      "version": 2,
+      "scope": {
+        "tenant_id": "tenant-demo",
+        "kind": "project",
+        "id": "atlas"
+      },
+      "content": "普通发布需两名审批者。",
+      "recorded_at": "2026-11-01T00:00:00Z",
+      "acl_version": 1
+    },
+    {
+      "id": "message-pref",
+      "version": 1,
+      "scope": {
+        "tenant_id": "tenant-demo",
+        "kind": "user",
+        "id": "u1"
+      },
+      "content": "以后先给简短结论。",
+      "recorded_at": "2026-11-02T00:00:00Z",
+      "acl_version": 1
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev-rule-v1",
+      "source": {
+        "id": "policy",
+        "version": 1
+      },
+      "locator": {
+        "kind": "section",
+        "value": "release"
+      },
+      "quote": "普通发布需一名审批者。"
+    },
+    {
+      "id": "ev-rule-v2",
+      "source": {
+        "id": "policy",
+        "version": 2
+      },
+      "locator": {
+        "kind": "section",
+        "value": "release"
+      },
+      "quote": "普通发布需两名审批者。"
+    },
+    {
+      "id": "ev-pref",
+      "source": {
+        "id": "message-pref",
+        "version": 1
+      },
+      "locator": {
+        "kind": "message",
+        "value": "E04"
+      },
+      "quote": "以后先给简短结论。"
+    }
+  ],
+  "items": [
+    {
+      "id": "rule",
+      "version": 1,
+      "scope": {
+        "tenant_id": "tenant-demo",
+        "kind": "project",
+        "id": "atlas"
+      },
+      "semantic_type": "rule",
+      "uses": [
+        "knowledge"
+      ],
+      "content": "Atlas 普通发布需一名审批者。",
+      "evidence_ids": [
+        "ev-rule-v1"
+      ],
+      "valid_from": "2026-10-01T00:00:00Z",
+      "valid_to": "2026-11-01T00:00:00Z",
+      "recorded_at": "2026-10-01T00:00:00Z",
+      "status": "superseded",
+      "verification": {
+        "method": "source_review",
+        "state": "supported"
+      },
+      "supersedes": null
+    },
+    {
+      "id": "rule",
+      "version": 2,
+      "scope": {
+        "tenant_id": "tenant-demo",
+        "kind": "project",
+        "id": "atlas"
+      },
+      "semantic_type": "rule",
+      "uses": [
+        "knowledge"
+      ],
+      "content": "Atlas 普通发布需两名审批者。",
+      "evidence_ids": [
+        "ev-rule-v2"
+      ],
+      "valid_from": "2026-11-01T00:00:00Z",
+      "valid_to": null,
+      "recorded_at": "2026-11-01T00:00:00Z",
+      "status": "active",
+      "verification": {
+        "method": "source_review",
+        "state": "supported"
+      },
+      "supersedes": {
+        "id": "rule",
+        "version": 1
+      }
+    },
+    {
+      "id": "preference",
+      "version": 1,
+      "scope": {
+        "tenant_id": "tenant-demo",
+        "kind": "user",
+        "id": "u1"
+      },
+      "semantic_type": "preference",
+      "uses": [
+        "memory"
+      ],
+      "content": "u1 希望以后先给简短结论。",
+      "evidence_ids": [
+        "ev-pref"
+      ],
+      "valid_from": "2026-11-02T00:00:00Z",
+      "valid_to": null,
+      "recorded_at": "2026-11-02T00:00:00Z",
+      "status": "active",
+      "verification": {
+        "method": "user_statement",
+        "state": "supported"
+      },
+      "supersedes": null
+    }
+  ],
+  "checkpoints": [
+    {
+      "run_id": "sync-1",
+      "version": 2,
+      "scope": {
+        "tenant_id": "tenant-demo",
+        "kind": "project",
+        "id": "atlas"
+      },
+      "step": "confirm_remote_page",
+      "side_effects": [
+        {
+          "key": "create-page-3",
+          "state": "unknown",
+          "remote_id": "demo-page-3"
+        }
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "wiki-release",
+      "version": 2,
+      "kind": "wiki",
+      "depends_on": [
+        {
+          "id": "rule",
+          "version": 2
+        }
+      ],
+      "builder_version": "demo-1",
+      "state": "ready"
+    }
+  ]
+}
