@@ -1,0 +1,203 @@
+{
+  "date": "2026-11-13",
+  "mode": "offline-fixture",
+  "notice": "实际离线运行；非模型提取或性能成绩。",
+  "sources": 12,
+  "duplicates": 1,
+  "source_rejections": [
+    {
+      "event_id": "ingest-other-user",
+      "reason": "SOURCE_NOT_AUTHORIZED"
+    },
+    {
+      "event_id": "ingest-empty",
+      "reason": "INVALID_SOURCE"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "rule-normal",
+      "decision": "ACCEPTED",
+      "reason": "POLICY_PASSED"
+    },
+    {
+      "id": "rule-emergency",
+      "decision": "ACCEPTED",
+      "reason": "POLICY_PASSED"
+    },
+    {
+      "id": "rule-mirror",
+      "decision": "ACCEPTED",
+      "reason": "POLICY_PASSED"
+    },
+    {
+      "id": "rule-hallucinated",
+      "decision": "REJECTED",
+      "reason": "UNSUPPORTED_NUMBER"
+    },
+    {
+      "id": "pref-detailed",
+      "decision": "ACCEPTED",
+      "reason": "POLICY_PASSED"
+    },
+    {
+      "id": "pref-temporary",
+      "decision": "TRANSIENT",
+      "reason": "SESSION_ONLY"
+    },
+    {
+      "id": "pref-brief",
+      "decision": "ACCEPTED",
+      "reason": "POLICY_PASSED"
+    },
+    {
+      "id": "pref-no-save",
+      "decision": "REJECTED",
+      "reason": "RETENTION_DENIED"
+    },
+    {
+      "id": "pref-foreign",
+      "decision": "REJECTED",
+      "reason": "SOURCE_UNAVAILABLE"
+    },
+    {
+      "id": "tool-goal",
+      "decision": "REJECTED",
+      "reason": "GOAL_NOT_CONFIRMED"
+    },
+    {
+      "id": "procedure-unsafe",
+      "decision": "NEEDS_REVIEW",
+      "reason": "PROCEDURE_NOT_INDEPENDENTLY_VALIDATED"
+    },
+    {
+      "id": "instruction-in-data",
+      "decision": "REJECTED",
+      "reason": "INSTRUCTION_IS_DATA"
+    },
+    {
+      "id": "pref-delete-request",
+      "decision": "ACCEPTED",
+      "reason": "POLICY_PASSED"
+    },
+    {
+      "id": "pref-inferred",
+      "decision": "NEEDS_REVIEW",
+      "reason": "NO_MATCHING_REVIEW"
+    },
+    {
+      "id": "quote-fabricated",
+      "decision": "REJECTED",
+      "reason": "QUOTE_NOT_FOUND"
+    },
+    {
+      "id": "scope-smuggling",
+      "decision": "REJECTED",
+      "reason": "INVALID_CANDIDATE"
+    }
+  ],
+  "writes": [
+    {
+      "event_id": "write-rule",
+      "action": "ADD",
+      "reason": "COMMITTED",
+      "version": 1
+    },
+    {
+      "event_id": "write-emergency",
+      "action": "ADD",
+      "reason": "COMMITTED",
+      "version": 1
+    },
+    {
+      "event_id": "write-mirror",
+      "action": "NOOP",
+      "reason": "SAME_CONTENT",
+      "version": 1
+    },
+    {
+      "event_id": "write-hallucinated",
+      "action": "BLOCKED",
+      "reason": "UNSUPPORTED_NUMBER"
+    },
+    {
+      "event_id": "write-pref-long",
+      "action": "ADD",
+      "reason": "COMMITTED",
+      "version": 1
+    },
+    {
+      "event_id": "write-pref-temp",
+      "action": "BLOCKED",
+      "reason": "SESSION_ONLY"
+    },
+    {
+      "event_id": "write-pref-short",
+      "action": "UPDATE",
+      "reason": "COMMITTED",
+      "version": 2
+    },
+    {
+      "event_id": "write-denied",
+      "action": "BLOCKED",
+      "reason": "RETENTION_DENIED"
+    },
+    {
+      "event_id": "write-foreign",
+      "action": "BLOCKED",
+      "reason": "SOURCE_UNAVAILABLE"
+    },
+    {
+      "event_id": "write-tool",
+      "action": "BLOCKED",
+      "reason": "GOAL_NOT_CONFIRMED"
+    },
+    {
+      "event_id": "write-procedure",
+      "action": "BLOCKED",
+      "reason": "PROCEDURE_NOT_INDEPENDENTLY_VALIDATED"
+    },
+    {
+      "event_id": "write-injection",
+      "action": "BLOCKED",
+      "reason": "INSTRUCTION_IS_DATA"
+    },
+    {
+      "event_id": "write-inferred",
+      "action": "BLOCKED",
+      "reason": "NO_MATCHING_REVIEW"
+    },
+    {
+      "event_id": "write-fake-quote",
+      "action": "BLOCKED",
+      "reason": "QUOTE_NOT_FOUND"
+    },
+    {
+      "event_id": "write-scope",
+      "action": "BLOCKED",
+      "reason": "INVALID_CANDIDATE"
+    },
+    {
+      "event_id": "write-pref-stale",
+      "action": "CONFLICT",
+      "reason": "VERSION_CONFLICT",
+      "current_version": 2
+    },
+    {
+      "event_id": "request-delete",
+      "action": "DELETE_REQUESTED",
+      "reason": "GOVERNANCE_HANDOFF",
+      "version": 2
+    },
+    {
+      "event_id": "write-rule",
+      "action": "ADD",
+      "reason": "COMMITTED",
+      "version": 1,
+      "replayed": true
+    }
+  ],
+  "logical_objects": 3,
+  "content_versions": 4,
+  "outbox_events": 5
+}

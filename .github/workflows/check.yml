@@ -16,6 +16,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run check
+      - run: npm run test:formation
       - run: npm run site:build
       - uses: actions/upload-pages-artifact@v3
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'

@@ -7,7 +7,7 @@ import Ajv2020 from 'ajv/dist/2020.js';
 import addFormats from 'ajv-formats';
 import {score} from './score.mjs';
 const root=process.cwd(),md=new MarkdownIt({html:true}),errors=[],tick=String.fromCharCode(96),fence=tick.repeat(3);
-const walk=d=>fs.readdirSync(d,{withFileTypes:true}).flatMap(e=>['node_modules','.git','.site','.vitepress'].includes(e.name)?[]:e.isDirectory()?walk(path.join(d,e.name)):[path.join(d,e.name)]);
+const walk=d=>fs.readdirSync(d,{withFileTypes:true}).flatMap(e=>['node_modules','.git','.site','.vitepress','.lab-runs'].includes(e.name)?[]:e.isDirectory()?walk(path.join(d,e.name)):[path.join(d,e.name)]);
 const files=walk(root),markdown=files.filter(f=>f.endsWith('.md')),read=f=>fs.readFileSync(f,'utf8');
 const relative=f=>path.relative(root,f).replaceAll('\\','/'),texts=new Map(markdown.map(f=>[f,read(f)]));
 function slugs(text){

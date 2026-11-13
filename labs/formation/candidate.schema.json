@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Untrusted extraction candidate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "source_key",
+    "chunk_id",
+    "quote",
+    "type",
+    "subject",
+    "predicate",
+    "value",
+    "conditions",
+    "content"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_key": {
+      "type": "string",
+      "minLength": 1
+    },
+    "chunk_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "quote": {
+      "type": "string",
+      "minLength": 1
+    },
+    "type": {
+      "enum": [
+        "rule",
+        "preference",
+        "event",
+        "procedure"
+      ]
+    },
+    "subject": {
+      "type": "string",
+      "minLength": 1
+    },
+    "predicate": {
+      "type": "string",
+      "minLength": 1
+    },
+    "value": {
+      "type": "string",
+      "minLength": 1
+    },
+    "conditions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "content": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

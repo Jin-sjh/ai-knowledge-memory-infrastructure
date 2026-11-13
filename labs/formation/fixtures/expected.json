@@ -1,0 +1,94 @@
+{
+  "decisions": {
+    "rule-normal": "ACCEPTED",
+    "rule-emergency": "ACCEPTED",
+    "rule-mirror": "ACCEPTED",
+    "rule-hallucinated": "REJECTED",
+    "pref-detailed": "ACCEPTED",
+    "pref-temporary": "TRANSIENT",
+    "pref-brief": "ACCEPTED",
+    "pref-no-save": "REJECTED",
+    "pref-foreign": "REJECTED",
+    "tool-goal": "REJECTED",
+    "procedure-unsafe": "NEEDS_REVIEW",
+    "instruction-in-data": "REJECTED",
+    "pref-delete-request": "ACCEPTED",
+    "pref-inferred": "NEEDS_REVIEW",
+    "quote-fabricated": "REJECTED",
+    "scope-smuggling": "REJECTED"
+  },
+  "writes": [
+    [
+      "write-rule",
+      "ADD"
+    ],
+    [
+      "write-emergency",
+      "ADD"
+    ],
+    [
+      "write-mirror",
+      "NOOP"
+    ],
+    [
+      "write-hallucinated",
+      "BLOCKED"
+    ],
+    [
+      "write-pref-long",
+      "ADD"
+    ],
+    [
+      "write-pref-temp",
+      "BLOCKED"
+    ],
+    [
+      "write-pref-short",
+      "UPDATE"
+    ],
+    [
+      "write-denied",
+      "BLOCKED"
+    ],
+    [
+      "write-foreign",
+      "BLOCKED"
+    ],
+    [
+      "write-tool",
+      "BLOCKED"
+    ],
+    [
+      "write-procedure",
+      "BLOCKED"
+    ],
+    [
+      "write-injection",
+      "BLOCKED"
+    ],
+    [
+      "write-inferred",
+      "BLOCKED"
+    ],
+    [
+      "write-fake-quote",
+      "BLOCKED"
+    ],
+    [
+      "write-scope",
+      "BLOCKED"
+    ],
+    [
+      "write-pref-stale",
+      "CONFLICT"
+    ],
+    [
+      "request-delete",
+      "DELETE_REQUESTED"
+    ],
+    [
+      "write-rule",
+      "ADD"
+    ]
+  ]
+}

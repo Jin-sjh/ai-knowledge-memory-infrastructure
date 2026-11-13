@@ -3,5 +3,6 @@ node_modules/
 *.log
 reports/local/
 .site/
+.lab-runs/
 .vitepress/cache/
 .vitepress/dist/

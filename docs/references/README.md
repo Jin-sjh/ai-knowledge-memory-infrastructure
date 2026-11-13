@@ -74,4 +74,8 @@ W3C, 2013。核验规范页面；来源派生建模参考，本项目非完整�
 
 核验规范索引；结构验证不承担事实验证。
 
+## R13
+
+[OpenAI Chat Completions API](https://developers.openai.com/api/reference/resources/chat/subresources/completions/methods/create) 与 [Structured model outputs](https://developers.openai.com/api/docs/guides/structured-outputs?api-mode=chat)。2026-11-13 核验官方请求形式和 JSON mode 边界；用于第三章可选适配器的接口说明，不作为语义正确、模型效果或所有兼容服务可用性的证据。本轮只做模拟接口测试，没有实际模型调用。
+
 正文 [Rxx] 对应本页条目，篇末提供直达链接。延伸阅读不代表每条工程建议都来自论文。可变页面在实施前重新核验并锁定版本。

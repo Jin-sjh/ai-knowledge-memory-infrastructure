@@ -12,6 +12,7 @@ export default defineConfig({
   sidebar:[...chapters,{text:'附录与设计',collapsed:true,items:[
    {text:'统一术语',link:'/docs/appendices/glossary.html'},
    {text:'Atlas 贯穿案例',link:'/docs/appendices/atlas-case.html'},
+   {text:'第三章可运行实验',link:'/labs/formation/'},
    {text:'数据模型与示例',link:'/examples/'},
    {text:'API 契约',link:'/docs/appendices/api-contract.html'},
    {text:'技术选型矩阵',link:'/docs/appendices/technology-matrix.html'},

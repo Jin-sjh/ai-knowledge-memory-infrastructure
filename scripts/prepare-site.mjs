@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 const root=process.cwd(),out=path.resolve('.site/content'),repo='https://github.com/Jin-sjh/ai-knowledge-memory-infrastructure/blob/main/';
-const skip=new Set(['.git','.github','.site','.vitepress','node_modules']);
+const skip=new Set(['.git','.github','.site','.vitepress','.lab-runs','node_modules']);
 const walk=d=>fs.readdirSync(d,{withFileTypes:true}).flatMap(e=>skip.has(e.name)?[]:e.isDirectory()?walk(path.join(d,e.name)):[path.join(d,e.name)]);
 const pages=walk(root).filter(f=>f.endsWith('.md')).map(f=>path.relative(root,f).replaceAll('\\','/'));
 const route=p=>p.replace(/(^|\/)README\.md$/,'$1index.md'),pageSet=new Set(pages);
