@@ -1,6 +1,6 @@
 # 开源项目的可运行示例
 
-[实现案例目录](../../docs/implementations/README.md)
+[任务状态与检查点分析](../../docs/06-architecture/06.md) · [记忆存储实现](../../docs/07-engineering/03.md)
 
 ## LangGraph Store 与检查点
 
@@ -16,6 +16,6 @@ npm run test:projects
 
 可以观察：同一用户的跨会话偏好共享、thread_id 对应的 visits 分别保留、同键覆盖不新增版本，以及宽 namespace 前缀能访问多个用户记录。后者说明原始 Store API 不自动替应用完成认证。
 
-[实际运行记录](langgraph-recorded.json)只记录稳定字段，不把随机 ID 或时间当断言。[两个回归测试](langgraph-store.test.mjs)验证上述分工。源码说明见 [LangGraph 案例](../../docs/implementations/langgraph.md)。
+[实际运行记录](langgraph-recorded.json)只记录稳定字段，不把随机 ID 或时间当断言。[两个回归测试](langgraph-store.test.mjs)验证上述分工。调用顺序、结果表和检查点源码直接在[任务状态持久化与恢复](../../docs/06-architecture/06.md)中分析。
 
 两个组件都用内存后端；新实例不共享旧数据，没有数据库持久化、自动提取或语义搜索效果验证。Mem0、Letta 与 LlamaIndex 目前提供固定版本源码分析，未在本仓库运行其完整系统。

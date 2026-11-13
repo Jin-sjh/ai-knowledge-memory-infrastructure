@@ -29,7 +29,7 @@
 
 - 八章正文：48 个独立主题，271 个细分考点。
 - 第三章配有 [Atlas 案例与 Node.js 实验](labs/formation/README.md)，可查看中间数据、运行失败场景，并选择接入真实模型。
-- [项目实现案例](docs/implementations/README.md)：LlamaIndex、Mem0、Letta Code 和 LangGraph 的源码路径、数据变化与设计取舍；LangGraph 提供官方包运行示例。
+- 第三章结合 LlamaIndex、Mem0 和 Letta Code 分析信息形成；第五至第七章结合 Letta 与 LangGraph 分析上下文、状态和存储，相关源码与运行结果在各小节中说明。
 - [术语表](docs/appendices/glossary.md)、[贯穿案例](docs/appendices/atlas-case.md)、[选型矩阵](docs/appendices/technology-matrix.md)。
 - [数据模型](examples/README.md)、[API 参考契约](docs/appendices/api-contract.md)、[实验规程](docs/appendices/evaluation-protocol.md)。
 - [一手文献](docs/references/README.md)、[原始大纲](sources/outline-v2.md)、[覆盖映射](sources/coverage.md)。

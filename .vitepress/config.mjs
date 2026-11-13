@@ -9,13 +9,7 @@ export default defineConfig({
  themeConfig:{
   siteTitle:'知识与记忆基础设施',
   nav:[{text:'阅读',link:'/docs/01-foundations/'},{text:'术语表',link:'/docs/appendices/glossary.html'},{text:'参考文献',link:'/docs/references/'},{text:'GitHub',link:'https://github.com/Jin-sjh/ai-knowledge-memory-infrastructure'}],
-  sidebar:[...chapters,{text:'项目实现案例',collapsed:false,items:[
-   {text:'实现对照与阅读顺序',link:'/docs/implementations/'},
-   {text:'LlamaIndex：文档与节点',link:'/docs/implementations/llamaindex.html'},
-   {text:'Mem0：提取与追加',link:'/docs/implementations/mem0.html'},
-   {text:'Letta Code：文件与上下文',link:'/docs/implementations/letta.html'},
-   {text:'LangGraph：Store 与检查点',link:'/docs/implementations/langgraph.html'}
-  ]},{text:'附录与设计',collapsed:true,items:[
+  sidebar:[...chapters,{text:'附录与设计',collapsed:true,items:[
    {text:'统一术语',link:'/docs/appendices/glossary.html'},
    {text:'Atlas 贯穿案例',link:'/docs/appendices/atlas-case.html'},
    {text:'第三章可运行实验',link:'/labs/formation/'},

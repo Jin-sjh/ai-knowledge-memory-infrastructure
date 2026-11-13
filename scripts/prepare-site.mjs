@@ -31,5 +31,17 @@ for(const d of fs.readdirSync('docs').filter(d=>/^\d\d-/.test(d)).sort()){
  nav.push({text:title,collapsed:true,link:'/docs/'+d+'/',items:fs.readdirSync('docs/'+d).filter(f=>/^\d\d\.md$/.test(f)).sort().map(f=>({text:fs.readFileSync('docs/'+d+'/'+f,'utf8').match(/^# (.+)/)[1],link:'/docs/'+d+'/'+f.replace(/\.md$/,'.html')}))});
 }
 fs.writeFileSync('.site/navigation.json',JSON.stringify(nav,null,2));
-fs.writeFileSync('.site/pages.json',JSON.stringify(pages.map(p=>({source:p,page:route(p).replace(/\.md$/,'.html')})),null,2));
+const redirects={
+ 'docs/implementations/index.md':'/docs/03-formation/',
+ 'docs/implementations/mem0.md':'/docs/03-formation/03.html',
+ 'docs/implementations/letta.md':'/docs/03-formation/04.html',
+ 'docs/implementations/langgraph.md':'/docs/06-architecture/06.html',
+ 'docs/implementations/llamaindex.md':'/docs/03-formation/02.html'
+};
+for(const [page,target]of Object.entries(redirects)){
+ const dest=path.join(out,page);fs.mkdirSync(path.dirname(dest),{recursive:true});
+ fs.writeFileSync(dest,'---\nlayout: page\nsearch: false\nsidebar: false\naside: false\nhead:\n  - - meta\n    - http-equiv: refresh\n      content: "0;url=/ai-knowledge-memory-infrastructure'+target+'"\n---\n\n[阅读正文]('+target+')\n');
+}
+const builtPages=[...pages.map(p=>({source:p,page:route(p).replace(/\.md$/,'.html')})),...Object.keys(redirects).map(p=>({source:'legacy-redirect',page:p.replace(/\.md$/,'.html')}))];
+fs.writeFileSync('.site/pages.json',JSON.stringify(builtPages,null,2));
 console.log('Prepared '+pages.length+' pages from existing Markdown.');
