@@ -18,6 +18,8 @@ Checkpoint 中 unknown 表示必须核验远端状态，不允许恢复后直接
 
 [evaluation/gold.json](evaluation/gold.json) 为小型合成金标准，sample-predictions.json 为手写流程演示预测，绝不作为系统实验结果。执行规程见[评测附录](../docs/appendices/evaluation-protocol.md)。
 
+[运行配置草案](evaluation/run-config.json)中的 input_tokens 包含固定输入与材料，reserved_output_tokens 为额外的输出预留。两者示例为 6,500 与 1,500；Context API 使用的材料预算需从完整输入上限扣除每题实际固定输入，不能直接照搬 input_tokens。口径与手算过程见[预算说明](../docs/05-retrieval-context/04.md)。
+
 ## 自动检查
 
 [检查工作流](../.github/workflows/check.yml)在 push 和 pull_request 时运行 npm ci 与 npm run check，复用本地文档、图表和数据校验。实际运行结果见仓库 Actions 页面。

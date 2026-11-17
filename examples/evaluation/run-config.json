@@ -13,8 +13,8 @@
     "overlap_tokens": 60
   },
   "budget": {
-    "input_tokens": 4000,
-    "reserved_output_tokens": 1000
+    "input_tokens": 6500,
+    "reserved_output_tokens": 1500
   },
   "baselines": [
     "no_external",

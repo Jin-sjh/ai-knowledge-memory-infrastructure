@@ -29,10 +29,12 @@ flowchart TD
  Parse --> Extract[候选提取]
  Extract --> Verify[结构与证据检查]
  Verify --> Policy{权限与保存策略}
- Policy -->|允许| Commit[事务提交与 outbox]
+ Policy -->|允许| Commit[提交主记录及待发送任务]
  Policy -->|拒绝或不足| Review[拒绝或审核]
  Commit --> Index[异步索引]
 ```
+
+图中的待发送任务常称为 outbox（事务发件箱）：主记录与任务在同一数据库事务中保存，再由后台读取任务，执行索引等后续工作。这样可以避免主记录已提交、进程却在发送通知前退出，导致后续任务遗漏。它不保证所有外部动作只执行一次，具体边界见[写入机制](06.md)。
 
 ## 章节关系
 
